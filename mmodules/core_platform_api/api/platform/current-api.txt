@@ -755,6 +755,7 @@ package dalvik.system {
     method public static void dumpHprofData(String, java.io.FileDescriptor) throws java.io.IOException;
     method public static void dumpHprofDataDdms();
     method @dalvik.annotation.compat.UnsupportedAppUsage public static void dumpReferenceTables();
+    method public static String dumpSysMonitorInfo(int, String[]);
     method public static int getAllocCount(int);
     method @dalvik.annotation.optimization.FastNative public static int getLoadedClassCount();
     method public static int getMethodTracingMode();

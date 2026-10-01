@@ -593,4 +593,15 @@ public final class VMDebug {
      */
     @libcore.api.CorePlatformApi
     public static native void setAllocTrackerStackDepth(int stackDepth);
+
+    /**
+     * Smartisan system-monitor dump, as declared by the PICO OS 5.13.7 core-libart (used by
+     * android.os.Debug#dumpSysMonitorInfo). The factory runtime registers no native
+     * implementation for it.
+     *
+     * @param type the dump type.
+     * @param params the dump parameters.
+     */
+    @libcore.api.CorePlatformApi
+    public static native String dumpSysMonitorInfo(int type, String[] params);
 }
