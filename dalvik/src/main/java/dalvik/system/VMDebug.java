@@ -644,4 +644,22 @@ public final class VMDebug {
      */
     @libcore.api.CorePlatformApi
     public static native void setDumpFlag(boolean flag);
+
+    /**
+     * Cropped "hprof" dump entry point declared by PICO OS 5.13.7 (used by
+     * android.os.Debug#dumpHprofDataCrop). The factory runtime registers no native
+     * implementation for it.
+     *
+     * @param fileName Name of output file.
+     * @param fd Descriptor of open file that will receive the output, or null.
+     * @param compress whether to compress the output.
+     */
+    @libcore.api.CorePlatformApi
+    public static void dumpHprofDataCrop(String fileName, FileDescriptor fd, boolean compress)
+            throws IOException {
+        dumpHprofDataCrop(fileName, fd != null ? fd.getInt$() : -1, compress);
+    }
+
+    private static native void dumpHprofDataCrop(String fileName, int fd, boolean compress)
+            throws IOException;
 }
