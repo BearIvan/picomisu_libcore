@@ -702,4 +702,11 @@ public final class VMRuntime {
      */
     @libcore.api.CorePlatformApi
     public static native void setProcessDataDirectory(String dataDir);
+
+    /**
+     * Declared by the PICO OS 5.13.7 core-libart; the factory runtime registers no native
+     * implementation for it.
+     */
+    @libcore.api.CorePlatformApi
+    public static native void setDumpHprof(boolean enable, int type);
 }
