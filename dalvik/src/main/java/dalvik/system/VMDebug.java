@@ -604,4 +604,29 @@ public final class VMDebug {
      */
     @libcore.api.CorePlatformApi
     public static native String dumpSysMonitorInfo(int type, String[] params);
+
+    /**
+     * Milliseconds since boot from the kernel jiffies counter shared by /dev/binder_get_time, as
+     * on PICO OS 5.13.7; -1 when the counter is not mapped in this process.
+     */
+    @libcore.api.CorePlatformApi
+    @FastNative
+    public static native long getSysMillisecond();
+
+    /**
+     * Uptime milliseconds from the counter shared by /dev/binder_get_time, as on PICO OS 5.13.7;
+     * -1 when the counter is not mapped in this process.
+     */
+    @libcore.api.CorePlatformApi
+    @FastNative
+    public static native long getSysUptimeMillis();
+
+    /**
+     * PICO OS 5.13.7 stub: always -1.
+     */
+    @libcore.api.CorePlatformApi
+    @FastNative
+    public static long getSysJiffes() {
+        return -1;
+    }
 }

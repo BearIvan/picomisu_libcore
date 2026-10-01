@@ -761,6 +761,9 @@ package dalvik.system {
     method public static int getMethodTracingMode();
     method public static String getRuntimeStat(String);
     method public static java.util.Map<java.lang.String,java.lang.String> getRuntimeStats();
+    method @dalvik.annotation.optimization.FastNative public static long getSysJiffes();
+    method @dalvik.annotation.optimization.FastNative public static long getSysMillisecond();
+    method @dalvik.annotation.optimization.FastNative public static long getSysUptimeMillis();
     method public static String[] getVmFeatureList();
     method @dalvik.annotation.compat.UnsupportedAppUsage @dalvik.annotation.optimization.FastNative public static boolean isDebuggerConnected();
     method @dalvik.annotation.optimization.FastNative public static boolean isDebuggingEnabled();
