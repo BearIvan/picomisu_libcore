@@ -629,4 +629,19 @@ public final class VMDebug {
     public static long getSysJiffes() {
         return -1;
     }
+
+    /**
+     * Runs the PICO OS 5.13.7 out-of-memory heap-dump check (cropped hprof into /data/hprofopt
+     * when /data/hprofopt/.pre_hprofopt exists).
+     */
+    @libcore.api.CorePlatformApi
+    public static native void checkDumpHeap();
+
+    /**
+     * Enables or disables the PICO OS 5.13.7 out-of-memory cropped heap dump for this process.
+     *
+     * @param flag true to allow the dump.
+     */
+    @libcore.api.CorePlatformApi
+    public static native void setDumpFlag(boolean flag);
 }

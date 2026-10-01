@@ -749,6 +749,7 @@ package dalvik.system {
   public final class VMDebug {
     method public static void attachAgent(String, ClassLoader) throws java.io.IOException;
     method public static boolean cacheRegisterMap(String);
+    method public static void checkDumpHeap();
     method public static long countInstancesOfClass(Class, boolean);
     method public static long[] countInstancesOfClasses(Class[], boolean);
     method public static void dumpHprofData(String) throws java.io.IOException;
@@ -771,6 +772,7 @@ package dalvik.system {
     method @dalvik.annotation.optimization.FastNative public static void printLoadedClasses(int);
     method public static void resetAllocCount(int);
     method public static void setAllocTrackerStackDepth(int);
+    method public static void setDumpFlag(boolean);
     method public static void startAllocCounting();
     method public static void startEmulatorTracing();
     method public static void startMethodTracing(String, int, int, boolean, int);
