@@ -112,4 +112,19 @@ public final class VMStack {
     @FastNative
     native public static int fillStackTraceElements(Thread t,
         StackTraceElement[] stackTraceElements);
+
+    /**
+     * Dumps the full (Java and native) stack of a thread, as on PICO OS 5.13.7. The thread is
+     * looked up by its kernel tid when {@code tid > 0}, else by its thin-lock thread id when
+     * {@code threadId != 0}, else by its peer.
+     *
+     * @param tid kernel thread id, or 0
+     * @param threadId runtime thread id, or 0
+     * @param t thread of interest, or null
+     * @return the dump, empty when the thread is the heap task daemon
+     */
+    @UnsupportedAppUsage
+    @libcore.api.CorePlatformApi
+    @FastNative
+    native public static String getThreadStackAll(int tid, int threadId, Thread t);
 }
